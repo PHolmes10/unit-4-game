@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <h1>Crystals Collector Game</h1>
+    <div id="targetScore">
+
+    </div>
+    <div id="wins">
+
+    </div>
+    <div id="losses">
+
+    </div>
+
+    <div id="currentScore">
+
+    </div>
+    <div>
+        <img src="assets/images/blue.png" class="crystals">
+    </div>
+    <div>
+        <img src="assets/images/green.png" class="crystals">
+    </div>
+    <div>
+        <img src="assets/images/red.png" class="crystals">
+    </div>
+    <div>
+        <img src="assets/images/yellow.png" class="crystals">
+    </div>
+
+    <script>
+        var targetNumber = 50;
+        var counter = 0;
+        var numberOptions = [1, 2, 3, 4];
+
+        for (var i = 0; i < numberOptions.length; i++) {
+            var imageCrystal = $("<img>");
+            imageCrystal.addClass("crystal-image");
+            imageCrystal.attr("src", "assets/images/blue.png");
+            $(".crystals").append(imageCrystal);
+        };
+        $(".crystal-image").on("click", function () {
+            var crystalValue = ($(this).attr("data-crystalvalue"));
+            crystalValue = parseInt(crystalValue);
+            counter += crystalValue;
+        })
+    </script>
+</body>
+
+</html>
