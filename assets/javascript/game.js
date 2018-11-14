@@ -56,3 +56,51 @@ $("#blueCrystal").on("click", function () {
         loser();
     }
 });
+
+var greenCrystalImage = $("<img>");
+greenCrystalImage.attr("src", "assets/images/green.png");
+greenCrystalImage.attr("data-greenvalue", green);
+$("#greenCrystal").append(greenCrystalImage);
+
+$("#greenCrystal").on("click", function () {
+    counter = counter + green;
+    console.log(counter);
+    $("#currentScore").text(counter);
+    if (counter === targetNumber) {
+        winner();
+    } else if (counter > targetNumber) {
+        loser();
+    }
+});
+
+var redCrystalImage = $("<img>");
+redCrystalImage.attr("src", "assets/images/red.png");
+redCrystalImage.attr("data-redvalue", red);
+$("#redCrystal").append(redCrystalImage);
+
+$("#redCrystal").on("click", function () {
+    counter = counter + red;
+    console.log(counter);
+    $("#currentScore").text(counter);
+    if (counter === targetNumber) {
+        winner();
+    } else if (counter > targetNumber) {
+        loser();
+    }
+});
+
+var yellowCrystalImage = $("<img>");
+yellowCrystalImage.attr("src", "assets/images/yellow.png");
+yellowCrystalImage.attr("data-bluevalue", yellow);
+$("#yellowCrystal").append(yellowCrystalImage);
+
+$("#yellowCrystal").on("click", function () {
+    counter = counter + yellow;
+    console.log(counter);
+    $("#currentScore").text(counter);
+    if (counter === targetNumber) {
+        winner();
+    } else if (counter > targetNumber) {
+        loser();
+    }
+});
